@@ -1,0 +1,23 @@
+body{
+    background-color: rgba(221, 221, 221, 0.829);
+}
+h1{
+    text-align: center;
+    color: #f76a6a;
+    font-family:Kode Mono;
+}
+
+div{
+    width: 80%;
+    display: block;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 5px;
+}
+p{
+    font-family: Roboto;
+    text-indent: 30px;
+    line-height: 25px;
+    text-align: justify;
+}
