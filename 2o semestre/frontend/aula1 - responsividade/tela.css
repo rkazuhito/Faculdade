@@ -21,3 +21,13 @@ p{
     line-height: 25px;
     text-align: justify;
 }
+div img{
+    display: block;
+    margin: auto;
+    width: 50%;
+    margin-bottom: 50px;
+}
+iframe{
+    display: block;
+    margin: auto;
+}
