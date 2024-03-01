@@ -119,5 +119,68 @@ void Input()
         gameOver = true; // Define o jogo como terminado
     }
 }
+void ShowMenu()
+{
+    system("cls"); // Limpa a tela do console
+    cout << "------------- PONG -------------" << endl; // Imprime o título do jogo
+    cout << "Pressione 'w' e 's' para mover o Jogador 1" << endl; // Instruções para mover o Jogador 1
+    cout << "Pressione 'i' e 'k' para mover o Jogador 2" << endl; // Instruções para mover o Jogador 2
+    cout << "Pressione 'q' para sair" << endl; // Instrução para sair do jogo
+    cout << "---------------------------------" << endl; // Linha separadora
+    cout << "Pressione qualquer tecla para iniciar o jogo..."; // Instrução para iniciar o jogo
+    _getch(); // Aguarda até que o usuário pressione uma tecla
+    showMenu = false; // Oculta o menu após o usuário pressionar uma tecla
+}
+
+int main()
+{
+    while (true) // Loop principal do jogo
+    {
+        Setup(); // Configura o estado inicial do jogo
+        while (!gameOver) // Loop enquanto o jogo não acabar
+        {
+            if (showMenu) // Se showMenu for verdadeiro, exibe o menu
+                ShowMenu(); // Exibe o menu na tela
+            Draw(); // Desenha a tela do jogo
+            Input(); // Captura a entrada do jogador
+            Logic(); // Atualiza a lógica do jogo
+            Sleep(50); // Pequeno atraso para diminuir a velocidade do jogo
+        }
+
+        Draw(); // Desenha a tela do jogo após o jogo terminar
+        if (ballX <= 0) // Se a bola sair pelo lado esquerdo da tela
+            cout << "Jogador 2 venceu!" << endl; // Mensagem indicando que o Jogador 2 venceu
+        else if (ballX >= width - 1) // Se a bola sair pelo lado direito da tela
+            cout << "Jogador 1 venceu!" << endl; // Mensagem indicando que o Jogador 1 venceu
+
+        cout << "Pressione qualquer tecla para jogar novamente..."; // Instrução para jogar novamente
+        _getch(); // Aguarda até que o usuário pressione uma tecla para jogar novamente
+    }
+    return 0; // Retorna 0 para indicar o término bem-sucedido do programa
+}
+
+// Bibliotecas: Incluímos as bibliotecas necessárias para entrada/saída no console (iostream),
+// para detecção de teclas pressionadas (conio.h) e para usar a função Sleep para criar um pequeno atraso (windows.h).
+
+// Variáveis globais: Definimos várias variáveis globais que serão usadas ao longo do código, como gameOver para controlar o estado do jogo,
+// showMenu para controlar a exibição do menu, dimensões do jogo (width e height), posições da bola e das raquetes, e direções da bola.
+
+// Função Setup(): Esta função é chamada no início do jogo para inicializar as variáveis. Ela define o estado inicial do jogo,
+// incluindo a posição inicial da bola e das raquetes, e as direções da bola.
+
+// Função Draw(): Esta função desenha o estado atual do jogo na tela. Percorremos uma matriz representando a tela do jogo e desenhamos os elementos,
+// como a bola, as raquetes e as paredes.
+
+// Função Input(): Esta função detecta as teclas pressionadas pelo jogador e atualiza as posições das raquetes de acordo.
+// Além disso, se o jogador pressionar 'q', o jogo termina e o menu é mostrado novamente.
+
+// Função Logic(): Aqui é onde a lógica do jogo acontece. A posição da bola é atualizada de acordo com sua direção.
+// Verificamos colisões da bola com as paredes e as raquetes, e se a bola sai da tela. Se a bola sair da tela, o jogo termina.
+
+// Função ShowMenu(): Esta função mostra o menu na tela. Ele fornece instruções sobre como jogar e aguarda o jogador pressionar qualquer tecla para iniciar o jogo.
+
+// Função main(): Aqui é onde o jogo é executado. O loop principal do jogo executa até o jogo acabar.
+// Se o jogo acabar, o vencedor é mostrado na tela e o jogador é solicitado a pressionar uma tecla para jogar novamente.
+
 
 
