@@ -8,7 +8,7 @@
 main(){ //função main
       setlocale(LC_ALL,"Portuguese"); // habilita acentuação 
       float cf,ccon,per,impst; //declaração de variáveis float
-      printf("Digite o custo de fábrica: "); //saída de dados
+      printf("Digite o custo de fabrica��o: "); //saída de dados
       scanf("%f",&cf);  //entrada de dados 
       impst=(0.45*(cf)); //variavel recebe um valor
       per=((cf)+(impst))*0.28; //variavel recebe um valor
