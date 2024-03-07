@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Madimi+One&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Madimi+One&family=Oswald:wght@200..700&display=swap');
+:root {
+    --roxoClaro: #db8ceb;
+    --roxoPadrao: #a041b3;
+    --roxoEscuro: #4f155a;
+    --fonteTitulo: "Madimi One", sans-serif;
+    --fonteCorpo: "Oswald", sans-serif;
+}
+
+body {
+    background-color: var(--roxoEscuro);
+}
+
+div .content{
+    background-color: rgba(255, 255, 255, 0.836);
+    margin: 10px;
+    border-radius: 4px;
+    padding: 3px;
+    font-family: var(--fonteCorpo);
+    box-shadow: 5px 5px 5px rgba(35, 2, 49, 0.788);
+}
+
+h1 {
+    text-align: center;
+    color: var(--roxoPadrao);
+    font-family: var(--fonteTitulo);
+}
+
+h2 {
+    color: var(--roxoClaro);
+    font-family: var(--fonteTitulo);
+}
+
+img {
+    border-radius: 50%;
+}
+
+img:hover {
+    opacity: 0.5;
+    border-radius: 50px;
+    transition: 1500ms;
+    transform: scale(1.5);
+    box-shadow: 5px 5px 3px purple;
+}
