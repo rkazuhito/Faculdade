@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carrossel de Imagens</title>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+    }
+
+    .carousel {
+        width: 90%;
+        margin: 50px auto;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .carousel-content {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    .card {
+        flex: 0 0 33.33%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .card img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 10px;
+        border-radius: 50%;
+        z-index: 2;
+    }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+</style>
+</head>
+<body>
+<div class="carousel">
+    <div class="carousel-content">
+        <div class="card">
+            <img src="https://via.placeholder.com/300" alt="Card 1">
+            <h3>Card 1</h3>
+            <p>Description of card 1</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/300" alt="Card 2">
+            <h3>Card 2</h3>
+            <p>Description of card 2</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/300" alt="Card 3">
+            <h3>Card 3</h3>
+            <p>Description of card 3</p>
+        </div>
+    </div>
+    <div class="prev">&#10094;</div>
+    <div class="next">&#10095;</div>
+</div>
+
+<script>
+    const carouselContent = document.querySelector('.carousel-content');
+    const cards = document.querySelectorAll('.card');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+
+    let currentIndex = 0;
+
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+
+    nextBtn.addEventListener('click', () => {
+        if (currentIndex < cards.length - 1) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+
+    function updateCarousel() {
+        const cardWidth = cards[0].offsetWidth;
+        carouselContent.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    }
+</script>
+</body>
+</html>

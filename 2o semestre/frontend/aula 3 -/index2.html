@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: #020202;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            text-indent: 10px;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 5px;
+            padding: 20px 20px 50px 20px;
+            background-color: white;
+            transition: 400ms;
+            border: 1px solid #BFBFBF;
+        }
+
+        img:hover {
+            transition: 400ms;
+            transform: scale(1.009);
+
+        }
+
+        a {
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #64adcf;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            transition: 1100ms;
+            background-color: #5693af;
+            box-shadow: 2px 4px #1e3a47;
+        }
+
+        @media screen and (max-width: 600px) {
+            img {
+                display: none;
+            }
+            body{
+                background-color: rgb(1, 1, 15);
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td style="margin-left: 10px;">
+                <h1>O Matheus</h1>
+                <h4><em>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum, similique consequuntur? Est hic
+                        laudantium soluta tempora cumque minus autem, debitis rerum? Assumenda architecto necessitatibus
+                        consectetur rem distinctio minus ad culpa!</em></h4>
+            </td>
+            <td>
+                <img src="matheusz.jpg" alt="">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="#"><button>Instagram</button></a>
+                <a href="#"><button>Github</button></a>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
