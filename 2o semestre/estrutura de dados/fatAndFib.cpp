@@ -11,8 +11,8 @@ int main(){
     res=fat(val);
     cout << val <<"!= " << res <<"\n";
     cout<< "fibonacci = ";
-    for(int i=0;i<val;i++){
-        cout <<fib(i+1)<<" ";
+    for(int i=1;i<=val;i++){
+        cout <<fib(i)<<" ";
     }
     return 0;
 }
