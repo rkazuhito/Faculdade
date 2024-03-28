@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário - DDJ web</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+
+
+    form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    button {
+        background-color: #0070c9;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    button:hover {
+        background-color: #00569d;
+    }
+
+</style>
+<body>
+    <header>
+        <h1>Formulário de Contato</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Página Inicial</a></li>
+            <li><a href="formulario.html">Formulário</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+    </nav>
+    <main>
+        <form action="processar_formulario.php" method="POST">
+            <fieldset id="form"><legend>Contact Form</legend>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone">
+                <label for="assunto">Assunto:</label>
+                <input type="text" id="assunto" name="assunto" required>
+                <label for="motivo_contato">Motivo do Contato:</label>
+                <select id="motivo_contato" name="motivo_contato" required>
+                    <option value="">Selecione</option>
+                    <option value="duvida">Dúvida</option>
+                    <option value="feedback">Feedback</option>
+                    <option value="suporte">Suporte</option>
+                    <option value="outro">Outro</option>
+                </select>
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco">
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="cidade">
+                <label for="estado">Estado:</label>
+                <input type="text" id="estado" name="estado">
+                <label for="codigo_postal">Código Postal:</label>
+                <input type="text" id="codigo_postal" name="codigo_postal">
+                <label for="data_nascimento">Data de Nascimento:</label>
+                <input type="date" id="data_nascimento" name="data_nascimento">
+                <label for="genero">Gênero:</label>
+                <input type="text" id="genero" name="genero">
+                <label for="interesse">Interesse:</label>
+                <input type="text" id="interesse" name="interesse">
+                <label for="preferencia_contato">Preferência de Contato:</label>
+                <select id="preferencia_contato" name="preferencia_contato">
+                    <option value="email">E-mail</option>
+                    <option value="telefone">Telefone</option>
+                    <option value="whatsapp">WhatsApp</option>
+                    <option value="outro">Outro</option>
+                </select>
+            </fieldset>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Site Rafael Kazuhito. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

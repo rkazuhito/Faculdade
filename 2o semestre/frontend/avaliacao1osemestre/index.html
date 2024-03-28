@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DDJ Web</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Compre sua DDJ aqui</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Página Inicial</a></li>
+            <li><a href="formulario.html">Formulário</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><i class="fas fa-shopping-cart" id="btn-carrinho"></i></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Produtos em Destaque</h2>
+            <div class="produto">
+                <img src="ddj200.jpg" alt="DDJ-200">
+                <h3>DDJ-200</h3>
+                <p class="descricao">Descrição do DDJ-200...</p>
+                <button class="comprar-btn" data-produto="DDJ-200">Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="ddj400.jpg" alt="DDJ-400">
+                <h3>DDJ-400</h3>
+                <p class="descricao">Descrição do DDJ-400...</p>
+                <button class="comprar-btn" data-produto="DDJ-400">Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="ddj800.jpg" alt="DDJ-800">
+                <h3>DDJ-800</h3>
+                <p class="descricao">Descrição do DDJ-800...</p>
+                <button class="comprar-btn" data-produto="DDJ-800">Comprar</button>
+            </div>
+        </section>
+        
+    </main>
+    <footer>
+        <p>&copy; 2024 Site Rafael Kazuhito. Todos os direitos reservados.</p>
+    </footer>
+
+
+ <!-- Modal Carrinho -->
+ <div id="modal-carrinho" class="modal">
+    <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <h2>Carrinho de Compras</h2>
+        <ul id="lista-carrinho">
+        </ul>
+    </div>
+</div>
+
+
+
+    <script>
+        // Função para lidar com o clique no botão "Comprar"
+        document.querySelectorAll('.comprar-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const produto = button.getAttribute('data-produto');
+                alert(`Você clicou em comprar ${produto}`);
+                // Aqui você pode adicionar lógica para adicionar o produto ao carrinho, por exemplo
+            });
+        });
+    </script>
+   <script>
+    let carrinho = [];
+
+    document.querySelectorAll('.comprar-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const produto = button.getAttribute('data-produto');
+            carrinho.push(produto);
+            atualizarCarrinho();
+        });
+    });
+
+    function atualizarCarrinho() {
+        const listaCarrinho = document.getElementById('lista-carrinho');
+        listaCarrinho.innerHTML = '';
+
+        carrinho.forEach((produto, index) => {
+            const li = document.createElement('li');
+            li.textContent = produto;
+
+            const botaoExcluir = document.createElement('button');
+            botaoExcluir.textContent = 'Excluir';
+            botaoExcluir.addEventListener('click', () => {
+                carrinho.splice(index, 1);
+                atualizarCarrinho();
+            });
+
+            li.appendChild(botaoExcluir);
+            listaCarrinho.appendChild(li);
+        });
+    }
+
+    // Abre o modal quando o botão "Carrinho" é clicado
+    document.getElementById('btn-carrinho').addEventListener('click', () => {
+        document.getElementById('modal-carrinho').style.display = 'block';
+    });
+
+    // Fecha o modal quando o botão de fechar (X) é clicado
+    document.querySelectorAll('.modal-close').forEach(closeButton => {
+        closeButton.addEventListener('click', () => {
+            document.getElementById('modal-carrinho').style.display = 'none';
+        });
+    });
+
+    // Fecha o modal se o usuário clicar fora da área do modal
+    window.addEventListener('click', event => {
+        const modal = document.getElementById('modal-carrinho');
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    });
+</script>
+</body>
+</html>
