@@ -10,6 +10,27 @@ header, nav, main, footer {
     padding: 20px;
 }
 
+header {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 10px;
+}
+header h1{
+    margin-left: 40px;
+}
+
+.logo {
+    width: 50px; /* Defina o tamanho desejado para a logo */
+    height: 50px; /* Defina o tamanho desejado para a logo */
+    border-radius: 50%; /* Torna a logo redonda */
+    overflow: hidden; /* Garante que a imagem não exceda os limites da div */
+}
+
+.logo img {
+    width: 100%; /* Garante que a imagem da logo preencha a div */
+    height: auto; /* Mantém a proporção da imagem */
+}
 
 /* Estilos para o menu */
 /* Estilos para o menu */
