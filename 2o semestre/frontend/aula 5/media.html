@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media</title>
+    <script>
+        //var -> local, pode variar
+        //let -> local, n pode variar
+        //const -> global, n pode variar
+        //o '+' serve para somar em números e concatenar quando for string
+        //parseInt transforma uma string em Int
+        function media(){
+            var v1 = document.getElementById('n1').value;
+            var v2 = document.getElementById('n2').value;
+            var media = (parseInt(v1) + parseInt(v2))/2;
+            if (media >= 7) {
+                document.getElementById('result').innerHTML = "Aprovado com média: " + media;
+                document.getElementById('result').style.backgroundColor='blue';
+                //alert("Passou com media " + media);    
+            }
+            else{
+                document.getElementById('result').innerHTML = "Reprovado com média:" + media;
+                document.getElementById('result').style.backgroundColor='red';
+                //alert("Reprovou com media " + media);
+            }
+            
+        }
+        function viraAzul(){
+            // document.getElementById('paranaClube').style.backgroundColor='blue';
+            let div = document.getElementById('paranaClube');
+            div.style.backgroundColor='blue';
+        }
+        function viraVermelho(){
+            // document.getElementById('paranaClube').style.backgroundColor='red';
+            let div = document.getElementById('paranaClube');
+            div.style.backgroundColor='red';
+        }
+        function addText(){
+            let div = document.getElementById('paranaClube');
+            div.append('test element');
+        }
+    </script>
+    <style>
+         .center {
+            margin: 100px auto 0 auto; 
+            padding: 50px;
+            width: 50%; 
+            text-align: center;
+            background-color: darkcyan;
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        n1 <input type="text" name="n1" id="n1"> <br>
+        n2 <input type="text" name="n2" id="n2"> <br>
+        <input type="button" value="Média" onclick="media()"> <br>
+        <div id="result"></div>
+    </div>
+    <div onmouseover="viraAzul()" onmouseout="viraVermelho()" onmousemove="addText()" id="paranaClube" style="width: 50%; height: 100px; margin: 15px;">
+        <p>passe o mouse em mim</p>
+    </div>
+    <!--mostrar o resultado em uma tag p e mudar a cor de fundo, vermelho reprovado, azul passou-->
+</body>
+</html>
