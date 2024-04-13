@@ -1,0 +1,7 @@
+SORTING
+
+O Insertion Sort é um algoritmo de ordenação que percorre a lista de elementos da esquerda para a direita, começando pelo segundo elemento. Em cada iteração, ele compara o elemento atual com os elementos à sua esquerda na parte já ordenada da lista. Se o elemento atual for menor que o elemento à sua esquerda, eles são trocados. Esse processo de comparação e troca continua até que o elemento atual seja maior que o elemento à sua esquerda ou chegue ao início da lista. O Insertion Sort é eficiente para conjuntos de dados pequenos ou quase ordenados, mas seu desempenho decai rapidamente para conjuntos de dados maiores devido à sua complexidade quadrática (O(n^2)).
+
+O Selection Sort divide a lista em duas partes: a parte ordenada e a parte não ordenada. Na cada iteração, ele busca o menor elemento na parte não ordenada e o troca com o primeiro elemento não ordenado, colocando-o na posição correta na parte ordenada. Esse processo é repetido até que toda a lista esteja ordenada. O Selection Sort também possui complexidade quadrática (O(n^2)) e não é eficiente para grandes conjuntos de dados.
+
+O Bubble Sort compara pares de elementos adjacentes e os troca se estiverem fora de ordem. Em cada iteração, o maior elemento "flutua" para a extremidade direita da lista, como uma bolha subindo na água. Esse processo é repetido até que a lista esteja completamente ordenada. O Bubble Sort é simples de implementar, mas é ineficiente devido à sua complexidade quadrática, tornando-o inadequado para grandes conjuntos de dados.
