@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aulashow</title>
+    <style>
+        div{
+            background-color: aquamarine;
+            display: block;
+            width: 40%;
+            margin: auto;
+            border-radius: 10px;
+            padding: 30px;
+        }
+        .butao{
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    placa: <input type="text" name="placa" id="placa">
+    modelo: <input type="text" name="modelo" id="modelo">
+    data: <input type="date" name="data" id="data">
+    hora: <input type="time" name="hora" id="hora">
+    <input type="button" class="butao" value="Gerar recibo" onclick="gerar()">
+
+    <div id="anotacao"></div>
+
+    <script>
+        function gerar() {
+            //alert('test');
+            var pl = document.getElementById('placa');
+            var md = document.getElementById('modelo');
+            var dt = document.getElementById('data');
+            var hr = document.getElementById('hora');
+            document.getElementById('anotacao').innerHTML = '<h1>Recibo </h1>' + pl.value +'<br>'+ md.value +'<br>'+ dt.value +'<br>'+ hr.value;
+        }
+    </script>
+</body>
+
+</html>

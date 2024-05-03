@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="velapagada.png" id="img" onclick="trocar()">
+<script>
+    function trocar(){
+        var element = document.getElementById('img');
+        if (element.src.match('velapagada')) {
+            element.src = "velacesa.png"
+        }
+        else{
+            element.src = "velapagada.png"
+        }
+    }
+</script>
+</body>
+</html>
