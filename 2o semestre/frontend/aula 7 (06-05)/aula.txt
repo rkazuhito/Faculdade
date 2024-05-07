@@ -1,0 +1,53 @@
+php + js +txt
+
+PHP (personal home page)
+- Linguagem de programação, processamento é server side e devolve somente HTML
+- Backend
+- XAMPP server web
+    x - sistema operacional
+    a - apache
+    m - MySQL (SGBD)
+    p - PHP (linguagem)
+    p - perl
+
+- zero layout (html e css) - fica misturado com a linguagem de marcação
+- delimitador <?php ?>
+
+VAR
+- variável inicia com $ 
+- não é preciso declarar as variáveis
+- case sensitive 
+- n pode iniciar com caractere especial exceto "_"
+
+        *multip
+        #coment de uma linha
+        @desabilita noticias da linha
+        &and
+        %modulo
+        !not
+        ?condicao op ternario 
+        || and
+        . , concatenar
+        /divisao
+        \escape
+        =atrib
+        ==comparacao igual
+        === igual e mesmo tipo
+        <> != dif
+        []vetor ou matriz
+        {}bloco
+
+-funcoes pré definidas ($_MAIUSC)
+    $_GET
+    $_REQUEST
+
+-passagem de dados
+post
+get
+request (post + get)
+
+-laços
+for - inicio
+while - inicio
+do while - final
+foreach - vetor
